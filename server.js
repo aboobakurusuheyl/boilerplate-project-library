@@ -9,6 +9,10 @@ const apiRoutes         = require('./routes/api.js');
 const fccTestingRoutes  = require('./routes/fcctesting.js');
 const runner            = require('./test-runner');
 
+// Initialize SQLite database (database is created when Book model is required)
+require('./models/Book');
+console.log('SQLite database initialized');
+
 const app = express();
 
 app.use('/public', express.static(process.cwd() + '/public'));
